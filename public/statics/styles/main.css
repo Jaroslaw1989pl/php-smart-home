@@ -1,0 +1,198 @@
+:root {
+    --avatar-img-height: 30px;
+}
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+    header#top-bar {
+        width: 100%;
+        height: calc(var(--avatar-img-height) + 10px);
+        /* padding: 5px; */
+        background-color: #63aaf1;
+    }
+
+        #top-bar-left {
+            position: relative;
+            float: left;
+            padding: 5px 15px;
+            width: 30%;
+            height: var(--avatar-img-height);
+        }
+
+            .img-home-link {
+
+            }
+
+            .img-home-link img {
+                width: var(--avatar-img-height);
+                height: var(--avatar-img-height);
+            }
+
+            .home-link {
+                position: absolute;
+                top: 50%;
+                left: 60px;
+                transform: translateY(-50%);
+                font-family: 'Russo One', sans-serif;
+                font-size: 30px;
+                text-decoration: none;
+                color: #FFF;
+            }
+
+        #top-bar-right {
+            position: relative;
+            float: right;
+            padding: 5px 15px;
+            width: 30%;
+            height: var(--avatar-img-height);
+            text-align: right;
+        }
+
+            #sign-buttons {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+                #sign-buttons a {
+                    margin-left: 10px;
+                }
+
+                    .sign-btn {
+                        font-family: 'Lato', sans-serif;
+                        padding: 5px 10px;
+                        font-size: 15px;
+                        font-weight: bold;
+                        border: none;
+                        border-radius: 5px;
+                    }
+                    .sign-btn:hover {
+                        cursor: pointer;
+                    }
+
+                    #sign-in-btn {
+                        background-color: #FFF;
+                        color: #5fbe77;
+                    }
+                    #sign-in-btn:hover {
+                        color: #64db82;
+                    }
+                    #sign-in-btn:active {
+                        color: #4b8a5b;
+                    }
+
+                    #sign-up-btn {
+                        background-color: #62c57a;
+                        color: #FFF;
+                    }
+                    #sign-up-btn:hover {
+                        background-color: #60d67e;
+                    }
+                    #sign-up-btn:active {
+                        background-color: #4b8a5b;
+                    }
+
+            #user-navigation {
+                text-align: center;
+            }
+
+                .profile-avatar {
+                    width: var(--avatar-img-height);
+                    height: var(--avatar-img-height);
+                    margin-right: 10px;
+                    border-radius: 50%;
+                }
+
+                #dropdown-toggle {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    text-decoration: none;
+                    color: #FFF;
+                }
+
+                .dropdown-menu {
+                    z-index: 200;
+                    display: none;
+                    width: 100px;
+                    position: absolute;
+                    right: 0;
+                    transform: translateY(1px);
+                    padding: 10px;
+                    background-color: #475466;
+                }
+
+                    .dropdown-menu-group {
+                        margin: 0 10px;
+                        padding: 10px 0;
+                        border-bottom: 1px solid #869e8c;
+                    }
+                    .dropdown-menu-group:last-of-type {
+                        border: none;
+                    }
+
+                        .menu-item {
+                            width: 100%;
+                        }
+
+                            .menu-item a {
+                                text-decoration: none;
+                                color: #e7e6e6;
+                            }
+                            .menu-item a:hover {
+                                color: #FFF;
+                            }
+
+                            .menu-item button {
+                                border: none;
+                                padding: 0;
+                                background-color: transparent;
+                                background-repeat:no-repeat;
+                                color: #e7e6e6;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+                            .menu-item button:hover {
+                                cursor: pointer;
+                                color: #e7e6e6;
+                            }
+
+    ul#flash-messages-list {
+        position: absolute;
+        right: 0;
+        list-style-type: none;
+        z-index: 100;
+        padding: 0;
+    }
+    ul#flash-messages-list.auth-flash-messages {
+        top: 0;
+    }
+
+        .flash-message-success {
+            float: right;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #55b369;
+            text-align: center;
+            color: #FFF;
+        }
+
+        .flash-message-error {
+            float: right;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e25e2a;
+            text-align: center;
+            color: #FFF;
+        }
+
+    #page-content {
+
+    }

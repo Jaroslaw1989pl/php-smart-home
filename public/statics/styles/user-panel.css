@@ -1,0 +1,233 @@
+aside {
+    width: 220px;
+    /*height:  calc(100vh - var(--avatar-img-height) - 10px);*/
+    float: left;
+    display: inline;
+    background-color: #987f7f;
+}
+
+    .aside-block {
+        width: 100%;
+        text-align: center;
+    }
+
+   .profile-img-container {
+       width: 100px;
+       height: 100px;
+       margin: auto;
+       overflow: hidden;
+       border-radius: 50%;
+   }
+
+    .aside-block img {
+        position: relative;
+        width: 100%;
+        height: max-content;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+        .aside-block button {
+            width: 100%;
+        }
+
+        #profile-btn {
+            margin-top: 20px;
+        }
+
+        #settings-btn {
+
+        }
+
+        #log-out-btn {
+
+        }
+
+main {
+    padding: 20px;
+    background-color: #7e7e7e;
+}
+
+    .section {
+        margin-left: 220px;
+        margin-right: 40px;
+    }
+
+    #profile-panel {
+        display: none;
+    }
+
+    #settings-panel {
+        display: none;
+    }
+
+        .form-wrapper {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+            form {
+
+            }
+
+                .form-section {
+                    float: left;
+                    width: 45%;
+                    background-color: #b1be5f;
+                }
+                .form-section:first-of-type {
+                    margin-right: 20px;
+                }
+
+                    #img-box {
+                        display: grid;
+                        grid-template-columns: 100px 100px 100px; 
+                        grid-template-rows: 100px 100px 100px;
+                        grid-column-gap: 10px;
+                        grid-row-gap: 10px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                        .img-input-group {
+                    
+                        }
+                        .img-input-group:hover {
+                            transform: scale(1.1);
+                        }
+                    
+                        input.avatar {
+                            position: absolute;
+                        }
+                    
+                    
+                        input.avatar + label {
+                            
+                        }
+                    
+                            img {
+                                width: 100%;
+                            }
+
+                    .form-group {
+                        display: inline-block;
+                        width: 48%;
+                    }
+                    .form-section .form-group {
+                        width: 100%;
+                    }
+
+                        .form-input {
+                            margin-bottom: 25px;
+                            width: 100%;
+                            border-bottom: 1px solid #c2c2c2;
+                        }
+                        .form-input:hover {
+                            border-bottom: 1px solid #7e7e7e;
+                        }
+                        .form-input:focus-within {
+                            border-bottom: 2px solid #0076da;
+                            margin-bottom: 24px
+                        }
+
+                            .input-error,.form-error {
+                                /*display: none;*/
+                                margin: 0 0 25px 0;
+                                padding: 5px;
+                                text-align: center;
+                                font-size: 15px;
+                                border: 1px solid #df0000;
+                                border-radius: 5px;
+                                background-color: rgba(252, 201, 201, 0.53);
+                                color: #df0000;
+                            }
+
+                            input[type="text"], input[type="password"] {
+                                border: none;
+                                outline: none;
+                                font-size: 16px;
+                                font-family: 'Lato', sans-serif;
+                                background-color: transparent;
+                            }
+                            .text-input {
+                                width: 100%;
+                            }
+                            .pass-input {
+                                width: 94%;
+                            }
+
+                            .show-hide-btn {
+                                /*background: url('http://mvc-javascript-php-service.pl/statics/img/auth/hidden.png');*/
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                cursor:pointer;
+                                width: 16px;
+                                height: 16px;
+                                padding: 0;
+                                border: none;
+                            }
+                            .show-hide-btn.hidden {
+                                background-image: url('http://mvc-javascript-php-service.pl/statics/img/auth/hidden.png');
+                            }
+                            .show-hide-btn.visible {
+                                background-image: url('http://mvc-javascript-php-service.pl/statics/img/auth/view.png');
+                            }
+
+                        .input-requirements {
+                            /*position: relative;*/
+                            transform: translateY(-50%);
+                            margin-left: 20px;
+                        }
+
+                        .input-requirements ul {
+                            margin-top: 5px;
+                            padding-left: 20px;
+                            color: #7e7e7e;
+                        }
+
+                        #location-live-hints {
+                            position: fixed;
+                            background-color: #b163f1;
+                        }
+
+                            #location-live-hints ul {
+                                list-style: none;
+                                background-color: #c095ac;
+                            }
+
+                                #location-live-hints li {
+                                    margin: 5px 0;
+                                    padding: 5px;
+                                    background-color: #fff;
+                                }
+                                #location-live-hints li:hover {
+                                    cursor: pointer;
+                                    background-color: #cceed9;
+                                }
+
+                        .auth-form-submit-btn {
+                            width: 100%;
+                            margin: 10px 0;
+                            padding: 7px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            border: none;
+                            border-radius: 5px;
+                            background-color: #5fbe77;
+                            color: #FFF;
+                        }
+                        .auth-form-submit-btn:hover {
+                            cursor: pointer;
+                            background-color: #60d67e;
+                        }
+                        .auth-form-submit-btn:active {
+                            background-color: #4b8a5b;
+                        }
+
+                        #del-form-submit-group {
+                            position: relative;
+                            left: 0;
+                        }

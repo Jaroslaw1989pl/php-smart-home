@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    background-color: #c095ac;
+}
+
+    main#auth {
+        width: 70%;
+        margin-left: 10vw;
+        margin-top: 10vh;
+    }
+
+        #content-left {
+            float: left;
+            width: 300px;
+        }
+
+            #home-link {
+                margin: 0;
+                font-family: 'Russo One', sans-serif;
+                font-size: 30px;
+                text-decoration: none;
+                color: #FFF;
+            }
+
+            #content-left p {
+                margin-top: 0;
+                font-size: 20px;
+                color: #FFF;
+            }
+
+        #content-right {
+            float: left;
+            width: 60%;
+        }
+
+            .auth-panel {
+                margin: auto;
+                width: 400px;
+                padding: 40px 60px;
+                background-color: #ffffff;
+            }
+
+                .auth-panel-header {
+                    margin-bottom: 25px;
+                }
+
+                form {
+
+                }
+
+                    .form-input {
+                        margin-bottom: 25px;
+                        width: 100%;
+                        border-bottom: 1px solid #c2c2c2;
+                    }
+                    .form-input:hover {
+                        border-bottom: 1px solid #7e7e7e;
+                    }
+                    .form-input:focus-within {
+                        border-bottom: 2px solid #0076da;
+                        margin-bottom: 24px
+                    }
+
+                        .input-error,.form-error {
+                            /*display: none;*/
+                            margin: 0 0 25px 0;
+                            padding: 5px;
+                            text-align: center;
+                            font-size: 15px;
+                            border: 1px solid #df0000;
+                            border-radius: 5px;
+                            background-color: rgba(252, 201, 201, 0.53);
+                            color: #df0000;
+                        }
+
+                        input[type="text"], input[type="password"] {
+                            border: none;
+                            outline: none;
+                            font-size: 16px;
+                            font-family: 'Lato', sans-serif;
+                            background-color: transparent;
+                        }
+                        .text-input {
+                            width: 100%;
+                        }
+                        .pass-input {
+                            width: 94%;
+                        }
+
+                        .show-hide-btn {
+                            /*background: url('http://mvc-javascript-php-service.pl/statics/img/auth/hidden.png');*/
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            cursor:pointer;
+                            width: 16px;
+                            height: 16px;
+                            padding: 0;
+                            border: none;
+                        }
+                        .show-hide-btn.hidden {
+                            background-image: url('http://mvc-javascript-php-service.pl/statics/img/auth/hidden.png');
+                        }
+                        .show-hide-btn.visible {
+                            background-image: url('http://mvc-javascript-php-service.pl/statics/img/auth/view.png');
+                        }
+
+                    .input-requirements {
+                        /*display: none;*/
+                    }
+
+                    .input-requirements ul {
+                        margin-top: 5px;
+                        padding-left: 20px;
+                        color: #7e7e7e;
+                    }
+
+                    .auth-form-submit-btn {
+                        width: 100%;
+                        margin: 10px 0;
+                        padding: 7px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: #5fbe77;
+                        color: #FFF;
+                    }
+                    .auth-form-submit-btn:hover {
+                        cursor: pointer;
+                        background-color: #60d67e;
+                    }
+                    .auth-form-submit-btn:active {
+                        background-color: #4b8a5b;
+                    }

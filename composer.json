@@ -1,0 +1,17 @@
+{
+    "name": "jaroslaw/smart-home",
+    "autoload": {
+        "psr-4": {
+            "": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Jaroslaw1989pl",
+            "email": "jarekpoczta1989@wp.pl"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.7"
+    }
+}
