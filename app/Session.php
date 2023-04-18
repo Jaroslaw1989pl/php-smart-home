@@ -63,12 +63,12 @@ class Session
         unset($_SESSION['errors']);
     }
 
-    public static function setUserId(string|int $value): void
+    public static function setUserId(string $value): void
     {
         $_SESSION['user'] = $value;
     }
 
-    public static function getUserId(): string|int|null
+    public static function getUserId(): string|null
     {
         return $_SESSION['user'];
     }

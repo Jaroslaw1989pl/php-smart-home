@@ -92,10 +92,11 @@ main {
                     }
                     
                         .img-input-group {
-                    
+                            filter: grayscale();
                         }
                         .img-input-group:hover {
-                            transform: scale(1.1);
+                            /* transform: scale(1.1); */
+                            filter: none;
                         }
                     
                         input.avatar {

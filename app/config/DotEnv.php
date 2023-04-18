@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace models;
+namespace app\config;
 
 
 class DotEnv
@@ -11,13 +11,15 @@ class DotEnv
 
     public function __construct(string $path)
     {
-        if (!file_exists($path)) throw new \InvalidArgumentException('.env file does not exist!');
+        if (!file_exists($path))
+            throw new \InvalidArgumentException('.env file does not exist!');
         else $this->path = $path;
     }
 
     public function load(): void
     {
-        if (!is_readable($this->path)) throw new \RuntimeException('.env file is not readable!');
+        if (!is_readable($this->path))
+            throw new \RuntimeException('.env file is not readable!');
 
         $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 

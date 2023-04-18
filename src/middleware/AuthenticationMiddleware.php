@@ -7,7 +7,7 @@ namespace src\middleware;
 use app\Request;
 use app\Response;
 use app\Session;
-use models\TokenModel;
+use src\models\schemas\Token;
 
 
 class AuthenticationMiddleware
@@ -22,11 +22,12 @@ class AuthenticationMiddleware
     {
         try
         {
+            $tokenObject = new Token();
             $token = Request::body()['q'];
 
             if (!$token)
                 throw new \Exception('Invalid token authentication.');
-            if (!TokenModel::verify($token) && !Session::getRequestStatus())
+            if (!$tokenObject->verify(["token" => $token]) && !Session::getRequestStatus())
                 throw new \Exception('Invalid token authentication.');
         }
         catch (\Exception $exception)

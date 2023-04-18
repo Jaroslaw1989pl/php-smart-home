@@ -8,6 +8,8 @@ require_once 'config/config.php';
 
 use src\router\Router;
 
+date_default_timezone_set("Europe/Warsaw");
+
 
 class Application
 {

@@ -1,0 +1,10 @@
+{
+    "migrationsCount": 0,
+    "database": {
+        "playfab": {
+            "tables": {
+
+            }
+        }
+    }
+}

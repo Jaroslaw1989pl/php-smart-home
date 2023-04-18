@@ -4,16 +4,16 @@
 
 declare(strict_types = 1);
 
-namespace models;
+namespace src\models\database;
 
 
-class Database
+class PostgreSQL
 {
-    private string $host = DB_CONFIG['host'];
-    private string $port = DB_CONFIG['port'];
-    private string $base = DB_CONFIG['base'];
-    private string $user = DB_CONFIG['user'];
-    private string $pass = DB_CONFIG['pass'];
+    private string $host = POSTGRESQL_CONFIG['host'];
+    private string $port = POSTGRESQL_CONFIG['port'];
+    private string $base = POSTGRESQL_CONFIG['base'];
+    private string $user = POSTGRESQL_CONFIG['user'];
+    private string $pass = POSTGRESQL_CONFIG['pass'];
 
     protected $connection = null;
 

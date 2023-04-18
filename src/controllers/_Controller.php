@@ -7,26 +7,35 @@ namespace src\controllers;
 use app\Session;
 // require_once ROOT_DIR.'/app/attributes/Middleware.php';
 // require_once ROOT_DIR.'/app/attributes/Route.php';
-use models\UserModel;
+use src\models\schemas\User;
+// use src\models\UserModel;
 
 
 class _Controller
 {
-    protected UserModel $userModel;
-    protected array $data;
+    protected User      $user;
+    // protected UserModel $userModel;
+    protected array     $data;
 
     public function __construct()
     {
-        $this->userModel = new UserModel();
+        // $this->userModel = new UserModel();
+        $this->user = new User();
 
         $this->data = [
-            'title' => 'change title',
-            'requestSuccess' => Session::getRequestStatus(),
-            'inputs' => Session::getInputs(),
-            'errors' => Session::getErrors(),
-            'flash' => Session::getFlashMessage(),
-            'user' => $this->userModel->get(Session::getUserId())
+            "title"          => "change title",
+            "requestSuccess" => Session::getRequestStatus(),
+            "inputs"         => Session::getInputs(),
+            "errors"         => Session::getErrors(),
+            "flash"          => Session::getFlashMessage()
         ];
+
+        if ($userData = $this->user->get(["uuid" => Session::getUserId()]))
+        {
+            list("uuid" => $uuid, "email" => $email, "email_update" => $emailUpdate, "pass_update" => $passUpdate) = $userData;
+            
+            $this->data['user'] = ["uuid" => $uuid, "email" => $email, "emailUpdate" => $emailUpdate, "passUpdate" => $passUpdate];
+        }
     }
 
     protected function render(string $layout = 'main', string $view = 'home', array $data = []): void

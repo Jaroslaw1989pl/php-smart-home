@@ -4,11 +4,11 @@ declare(strict_types = 1);
 
 use src\router\Router;
 // controllers
-use src\controllers\ViewController;
 use src\controllers\AuthController;
+use src\controllers\SocketController;
 use src\controllers\UserController;
+use src\controllers\ViewController;
 // api controllers
-use src\controllers\api\SocketTest;
 // middleware
 $authMiddleware = 'src\middleware\AuthenticationMiddleware';
 
@@ -44,18 +44,19 @@ Router::route(path: '/logout')
 Router::route(path: '/delete')
     ->post(middleware: [], action: [AuthController::class, 'delete']);
 
-// /********** protected routes **********/
+/********** protected routes **********/
 Router::route(path: '/user-panel/profile')
     ->get(middleware: ["$authMiddleware::user"], action: [ViewController::class, 'userPanel'])
     ->post(middleware: [], action: [UserController::class, 'profile']);
 Router::route(path: '/user-panel/settings')
     ->get(middleware: ["$authMiddleware::user"], action: [ViewController::class, 'userPanel']);
-// Router::route(path: '/user-panel/avatar')
-//     ->post(middleware: [], action: ['UserController', 'avatar']);
+Router::route(path: '/socket/start')
+    ->post(middleware: [], action: [SocketController::class, 'start']);
+Router::route(path: '/socket/stop')
+    ->post(middleware: [], action: [SocketController::class, 'stop']);
 
 /********** api routes **********/
-Router::route(path: '/socket-test')
-    ->post(middleware: [], action: [SocketTest::class, 'saveRequest']);
+
 
 /********** error routes **********/
 Router::not_found(ViewController::class, 'notFound');

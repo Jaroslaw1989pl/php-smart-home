@@ -19,11 +19,11 @@ class UserController extends _Controller
     // #[Post(path: '/user-panel/profile')]
     public function profile()
     {
-        $formErrors = [];
-        $userAvatar = Request::body()['avatar'] ?? null;
+        $formErrors    = [];
+        $userAvatar    = Request::body()['avatar'] ?? null;
         $userFirstName = trim(Request::body()['userFirstName']);
-        $userLastName = trim(Request::body()['userLastName']);
-        $userPhone = Request::body()['userPhone'];
+        $userLastName  = trim(Request::body()['userLastName']);
+        $userPhone     = Request::body()['userPhone'];
         // $userLocation = trim(Request::body()['userLocation']);
 
         // echo '<pre>';

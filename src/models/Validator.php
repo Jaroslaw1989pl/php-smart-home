@@ -2,15 +2,18 @@
 
 declare(strict_types = 1);
 
-namespace models;
+namespace src\models;
+
+use src\models\database\PhpMyAdmin;
 
 
-class ValidationModel extends Database
+class Validator extends PhpMyAdmin
 {
     const RULE_REQUIRED   = "required";
     const RULE_MIN_LENGTH = "minLength";
     const RULE_MAX_LENGTH = "maxLength";
     const RULE_EQUAL      = "equal";
+    const RULE_NOT_EQUAL  = "notEqual";
     const RULE_UNIQUENESS = "uniqueness";
     const RULE_PASSWORD   = "password";
     const RULE_EMAIL      = "email";
@@ -18,7 +21,7 @@ class ValidationModel extends Database
     private static mixed $input = null;
 
 
-    public static function input(mixed $input): ValidationModel
+    public static function input(mixed $input): Validator
     {
         self::$input = trim(htmlspecialchars($input));
         return new static();
@@ -33,7 +36,7 @@ class ValidationModel extends Database
                 if (gettype($rule) === "string")
                     call_user_func("self::$rule");
                 else if (gettype($rule) === "array")
-                    call_user_func("self::$rule[0]", $rule[1]);
+                    call_user_func("self::$rule[0]", $rule[1]);//array_slice($rule, 1));
             }
 
             return self::$input;
@@ -83,6 +86,15 @@ class ValidationModel extends Database
     /**
      * @throws \Exception
      */
+    private static function notEqual(string|int|float $value): void
+    {
+        if (self::$input === $value)
+            throw new \Exception("Inputs can not be the same.");
+    }
+
+    /**
+     * @throws \Exception
+     */
     private static function email(): void
     {
         if (!filter_var(self::$input, FILTER_VALIDATE_EMAIL))
@@ -98,10 +110,15 @@ class ValidationModel extends Database
             throw new \Exception("Password does not met requirements.");
     }
 
-
-    // public function uniqueness(string $key = 'id' | 'name' | 'email', string $value): bool
-    // {
-    //     $result = $this->select("SELECT * FROM users WHERE $key = :value_0", [$value]);
-    //     return count($result) > 0 ? false : true;
-    // }
+    /**
+     * @throws \Exception
+     */
+    // private static function uniqueness(object $model, string|int|float $attribute)
+    private static function uniqueness(array $values)
+    {
+        $model = $values[0];
+        $field = $values[1];
+        if (!empty($model->get([$field => self::$input])))
+            throw new \Exception(ucfirst($field)." already in use.");
+    }
 }
